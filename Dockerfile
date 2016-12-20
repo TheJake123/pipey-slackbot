@@ -1,3 +1,4 @@
+apt-get install -y libmysqlclient-dev
 FROM python:3.4-slim
 ADD . /src
 WORKDIR /src
