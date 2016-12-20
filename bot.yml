@@ -1,5 +1,5 @@
-name: Beepboop Starterbot
-description: A simple Python bot sample for Beep Boop
+name: Pipey
+description: A Slack bot for adding notes to deals in pipedrive via Slack
 avatar: resources/avatar.png
 background: resources/background.png
 config:
@@ -7,10 +7,12 @@ config:
     friendly_name: Severity level to show for logging.
     info: See https://docs.python.org/2/library/logging.html#levels
     default: DEBUG
-  - name: SECRET
-    friendly_name: Shhhh
-    info: This is an secret option
-    type: secret
-    default: not secret though
+  - name: PIPEDRIVE_API_KEY
+    friendly_name: Pipedrive API Key
+  - name: DB_URL
+    friendly_name: URL to the Pipey database
+  - name: DB_USER
+    friendly_name: Username for the databse
+  - name: DB_PASSWORD
+    friendly_name: Passowrd for the databse
 screenshots:
-  - screenshot: resources/screenshot1.png
