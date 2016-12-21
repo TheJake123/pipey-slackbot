@@ -14,7 +14,7 @@ def spawn_bot():
 
 
 class SlackBot(object):
-    def __init__(self, token=None):
+    def __init__(self, pipedrive_api_key, db_api_url, token=None):
         """Creates Slacker Web and RTM clients with API Bot User token.
 
         Args:
@@ -22,6 +22,8 @@ class SlackBot(object):
         """
         self.last_ping = 0
         self.keep_running = True
+        self._pipedrive_api_key = pipedrive_api_key
+        self._db_api_url = db_api_url
         if token is not None:
             self.clients = SlackClients(token)
 
@@ -45,7 +47,7 @@ class SlackBot(object):
                 self.clients.rtm.server.domain))
 
             msg_writer = Messenger(self.clients)
-            event_handler = RtmEventHandler(self.clients, msg_writer)
+            event_handler = RtmEventHandler(self.clients, msg_writer, self._pipedrive_api_key, self._db_api_url)
 
             while self.keep_running:
                 for event in self.clients.rtm.rtm_read():

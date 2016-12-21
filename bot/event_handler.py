@@ -7,9 +7,11 @@ logger = logging.getLogger(__name__)
 
 
 class RtmEventHandler(object):
-    def __init__(self, slack_clients, msg_writer):
+    def __init__(self, slack_clients, msg_writer, pipedrive_api_key, db_url):
         self.clients = slack_clients
         self.msg_writer = msg_writer
+        self.pipedrive_api_key = pipedrive_api_key
+        self.db_url = db_url
 
     def handle(self, event):
 

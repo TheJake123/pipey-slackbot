@@ -9,10 +9,7 @@ config:
     default: DEBUG
   - name: PIPEDRIVE_API_KEY
     friendly_name: Pipedrive API Key
-  - name: DB_URL
-    friendly_name: URL to the Pipey database
-  - name: DB_USER
-    friendly_name: Username for the databse
-  - name: DB_PASSWORD
-    friendly_name: Passowrd for the databse
+  - name: DB_API_URL
+    friendly_name: Database API URL
+    default: api.pipedrive.com/v1/
 screenshots:
